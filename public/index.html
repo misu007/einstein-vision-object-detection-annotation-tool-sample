@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Annotation Tool for Einstein Vision Object Detection</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/stylesheets/mystyle.css" >
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="app-wrapper">
+		<nav class="navbar navbar-default">
+
+			<div class="container">
+
+				<a class="navbar-brand change-page" href="#" data-target="page1">Sample Annotation Tool for Einstein Vision Object Detection</span></a>
+
+			</div>
+		</nav>
+
+		<div class="container page-container">
+
+
+			<div id="page1">
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+
+
+						<div class="step1" id="org1">
+							<div class="myscr0">
+
+
+								<div class="step step1">
+									<div class="tab-content">
+										
+										<div role="tabpanel" class="tab-pane active" id="new-object-detection-page">
+											<input type="file" style="display:none;" id="dummy-nod-files" multiple="multiple"/>
+											<div class="row">
+												<div class="col-sm-12 col-md-12" style="padding-top: 2rem;padding-bottom: 1.5rem;">
+													<button class="btn btn-default od-new-label-button"><i class="fa fa-plus" aria-hidden="true"></i> Label
+													</button>
+													<span id="od-new-img-dt-label-list"></span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-sm-2 col-md-2 od-canvas-main">
+													<div class="annotation-title">
+														<h4><i class="fa fa-file-image-o" aria-hidden="true"></i> Files</h4>
+													</div>
+													<div id="od-new-img-t-list"></div>
+													<a class="btn btn-default btn-open-file">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+													<br/>.jpg / .png /.zip</a>
+												</div>
+												<div class="col-sm-8 col-md-8 od-canvas-main" style="padding:3px;">
+
+													<div id="dt-create-canvas-container" class="dt-canvas-container">
+														<canvas id="od-new-img-canvas" width="0" height="0"></canvas>
+													</div> 
+
+												</div>
+												<div class="col-sm-2 col-md-2  od-canvas-main">
+													<div class="annotation-title">
+														<h4><i class="fa fa-object-ungroup" aria-hidden="true"></i> Annotations</h4>
+													</div>
+													<div id="od-new-img-label-list">
+
+													</div>
+												</div>
+											</div>
+											<div class="row" >
+												<div id="create-dt-model-area">
+													<div class="hint-container">
+														<span class="hint-element">
+															<button class="btn btn-default">G</button>
+															<span> Grid</span>
+														</span>
+														<span class="hint-element">
+															<button class="btn btn-default">L</button>
+															<span> Label</span>
+														</span>
+														<span class="hint-element">
+															<button class="btn btn-default">V</button>
+															<span> View</span>
+														</span>
+													</div>
+
+													 <div class="navbar-form navbar-right">
+													 <button id="create-dt-model-btn" class="btn btn-primary create-dt-model-btn save-complete-btn disabled"><i class="fa fa-check" aria-hidden="true"></i> Save</button>
+												      </div>
+													
+													</div>
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+
+
+					<div class="col-sm-6 col-md-6">
+						<div class="panel panel-default step0" id="org2">
+							
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+
+
+
+			<!-- Modal2 -->
+			<div class="modal fade" id="mymodal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">New Label</h4>
+						</div>
+						<div class="modal-body" id="mymodalbody2">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Name</label>
+									<div class="col-sm-6">
+										<input type="text" id="newDtLabelName" class="form-control" placeholder="Label Name">
+									</div>
+								</div>
+							</form>
+							<a class="btn btn-primary pull-right new-dt-label-btn">Create</a>
+
+						</div>
+						<div class="modal-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal3 change lanbel name -->
+			<div class="modal fade" id="mymodal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Edit Label</h4>
+						</div>
+						<div class="modal-body" id="mymodalbody3">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<input type="hidden" id="changeDtLabelId"/>
+									<label class="col-sm-4 control-label">Name</label>
+									<div class="col-sm-6">
+										<input type="text" id="changeDtLabelName" class="form-control" placeholder="Label Name">
+									</div>
+								</div>
+							</form>
+							<a class="btn btn-primary pull-right change-dt-label-btn">Change</a>
+
+						</div>
+						<div class="modal-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal4 change lanbel annotation -->
+			<div class="modal fade" id="mymodal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Change Label</h4>
+						</div>
+						<div class="modal-body" id="mymodalbody4">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<input type="hidden" id="changeAnnotationFile"/>
+									<input type="hidden" id="changeAnnotationId"/>
+									<label class="col-sm-4 control-label">Label</label>
+									<div class="col-sm-6">
+										<select id="changeAnnotationLabelId" class="form-control"></select>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal5 Start trainning Object detection dataset -->
+			<div class="modal fade" id="mymodal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">Download</h4>
+						</div>
+						<div class="modal-body" id="mymodalbody5">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-4 control-label">Zip File</label>
+									<div class="col-sm-6">
+										<p class="form-control-static"><span id="od-cm-td-name"></span> 
+<a id="od-cm-td-url" href=""><i class="fa fa-file-archive-o" aria-hidden="true"></i></a></p>
+									</div>
+
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Loading -->
+
+			<div class="loadingcontainer hidden" id="myloading">
+				<div class="bubblingG">
+					<span id="bubblingG_1">
+					</span>
+					<span id="bubblingG_2">
+					</span>
+					<span id="bubblingG_3">
+					</span>
+				</div>
+			</div>
+
+			<!-- DragndDrop -->
+			<div class="dd" id="mydd">
+				<div class="dd-box">
+					<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true" style="margin-right:20px;"></span> Drag and drop here!
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- alert -->
+	<div id="alert-page" style="position: fixed; text-align: center;top: 45vh;left: 0; width: 100vw;">
+						<p style="font-size: 4rem;">Sample Annotation Tool for Einstein Vision Object Detection</span></p>
+						<p style="font-size: 2rem;">Please increase screen width to more than 1100px.</p>
+
+	</div>			
+
+	<script src="/js/myscript.js"></script>
+</body>
+</html>

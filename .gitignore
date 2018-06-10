@@ -1,0 +1,12 @@
+node_modules
+npm-debug.log
+*.env
+*.dev
+.DS_Store
+spool
+Dockerfile
+docker-compose.yml
+public/spool
+public/data
+data/zip
+package-lock.json
