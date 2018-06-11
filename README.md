@@ -8,8 +8,8 @@ Sample annotation tool to label images for Einstein Vision Object Detection.
 
 Type the commands below.
 ```
-# git clone https://github.com/misu007/einstein-vision-anotation-creator.git
-# cd einstein-vision-anotation-creator
+# git clone https://github.com/misu007/einstein-vision-object-detection-annotation-tool-sample.git
+# cd einstein-vision-object-detection-annotation-tool-sample
 # npm install
 ```
 
@@ -24,38 +24,49 @@ http://localhost:5000
 ```
 （When you want to stop it, press Ctrl-C.）
 
-### 使い方
+### How to create zip?
 
-#### 画像の読み込み
-ドラッグ＆ドロップするか、左上にある+ボタンをクリックします。
-<img src="https://github.com/misu007/einstein-vision-annotation-creator/blob/master/readme/img001.gif"/>
+#### Images
+Click "+ .jpg/.png/.zip" or drag and drop files.
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/001.gif” width=“800px">
 
-#### ラベルの作成
-ラベル作成ボタンをクリックし、任意のラベル名を入力して保存します。
-<img src="https://github.com/misu007/einstein-vision-annotation-creator/blob/master/readme/img002.gif"/>
+#### Labels
+Click "+ Label" to define labels to want to use.
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/002.gif” width=“800px">
 
-#### アノテーション作成
-付与したいラベルをクリックしアクティブにし、画像上で長方形の対角線上をなぞるようにドラッグ&ドロップします。
-<img src="https://github.com/misu007/einstein-vision-annotation-creator/blob/master/readme/img003.gif"/>
+#### Annotations
+Create bounding boxs on the image to create annotations.
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/003.gif” width=“800px">
 
-#### アノテーションのサイズ変更
-４隅の四角をドラッグします。
+#### Zip file output
+Click Save button to generate zip file that is ready to create Custom Model in Einstein Vision.
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/004.gif” width=“800px">
 
-#### アノテーションの移動
-＋マークをドラッグします。
-<img src="https://github.com/misu007/einstein-vision-annotation-creator/blob/master/readme/img004.gif"/>
+### Annotation Tips
 
-#### アノテーションの複製
-Shiftキーをクリックしながら、＋マークをドラッグします。
-<img src="https://github.com/misu007/einstein-vision-annotation-creator/blob/master/readme/img005.gif"/>
+#### Size Change & Move
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/201.gif” width=“800px">
 
-#### ビューの変更
-　Gキー、Lキー、Vキーで　グリッド表示切替、ラベル表示切替、サイズ変更が可能です。
+#### Label Change
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/202.gif” width=“800px">
+
+#### Remove
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/203.gif” width=“800px">
+
+### Keyboard Shortcuts
+
+#### Grid : Show / Hide
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/301.gif” width=“800px">
+
+#### Label : Show / Hide
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/302.gif” width=“800px">
+
+#### Image Size : Width 100% / Height 100%
+<img src="https://raw.githubusercontent.com/misu007/for_readme/master/for_einstein_vision_object_detection_annotation_tool/303.gif” width=“800px">
 
 
+## Licence
+MIT
 
-## ライセンス
-MITライセンス
-
-## 免責
-ツール・コードは全て動作を保証したり、推奨するものではありません。あくまでもサンプルとして、ご活用ください。
+## Notes
+This is just a sample application.
